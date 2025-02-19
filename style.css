@@ -1,0 +1,1002 @@
+/* Root CSS Variables */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #8BC34A;
+  --tertiary-color: #FFD700;
+  --background-color: #F4F7F6;
+  --text-color: #FFF;
+  --footer-bg-color: #333;
+  --dark-grey: #2b2b2b;
+  --footer-text-color: #FFF;
+  --secondary-color-2: #8B4513; 
+  --primary: #0D6EFD;
+  --success: #198754;
+  --danger: #DC3545;
+  --sky-blue: #87CEEB;
+  --dark-green: #236b26;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: verdana, sans-serif;
+  background: linear-gradient(135deg, #d4e7c5, #a8c3a6);
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  padding-top: 10vh;
+
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+nav {
+  width: 100%;
+  height: 10vh;
+
+}
+.navbar-collapse {
+  background-color: var(--primary-color);
+  padding-left: 20px; /* Replace with your preferred color */
+}
+#main_icon {
+  font-size: 30px;
+  color: var(--text-color);
+  text-decoration: underline;
+  font-weight: 650;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.nav-link {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-color);
+  transition: 0.2s;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  color: var(--tertiary-color);
+}
+  
+  /* Hero Section */
+#hero {
+  width: 100%;
+  position: relative;
+  height: 90vh;
+  margin: 0%;
+  padding: 0%;
+}
+#hero_image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  object-position: bottom;
+  margin: 0%;
+  padding: 0%;
+  position: static;
+  top: 0%;
+  left: 0%;
+}
+
+#hero_overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero_overlay h1 {
+  font-size: 150px;
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 20%;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pollution_awareness_section {
+  background: linear-gradient(to bottom, var(--sky-blue) 10%, var(--dark-green) 90%); /* Brown on top, white at the bottom */
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.pollution-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  background-color: var(--background-color);
+  border: 5px solid var(--tertiary-color);
+  transition: 0.5s;
+}
+
+
+.fa-smog {
+  color: var(--danger);
+}
+.fa-water {
+  color: var(--primary);
+}
+.fa-trash {
+  color: var(--success);
+}
+
+#air_pollution:hover {
+  background-color: var(--danger);
+  color: var(--text-color);
+}
+#air_pollution:hover {
+  background-color: var(--danger);
+  color: var(--text-color);
+}
+
+#air_pollution:hover .fa-smog, #air_pollution:hover h5 {
+  color: var(--text-color);  /* Ensuring h5 color is updated */
+}
+
+#water_pollution:hover {
+  background-color: var(--primary);
+  color: var(--text-color);
+}
+
+#water_pollution:hover .fa-water, #water_pollution:hover h5 {
+  color: var(--text-color);  /* Ensuring h5 color is updated */
+}
+
+#land_pollution:hover {
+  background-color: var(--success);
+  color: var(--text-color);
+}
+
+#land_pollution:hover .fa-trash, #land_pollution:hover h5 {
+  color: var(--text-color);  /* Ensuring h5 color is updated */
+}
+
+.pollution-card h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);  /* Default color for h5 */
+}
+
+
+#learn_more_button {
+  background-color: var(--tertiary-color);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+#learn_more_button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+
+/* General styling for full-width container */
+#weather_container {
+  width: 100%;
+  padding: 25px;
+  margin: 0;
+  background: linear-gradient(135deg, #d4e7c5, #a8c3a6); /* Light green gradient */
+  text-align: center;
+}
+
+/* Title styling */
+#title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2f4f4f; /* Deep green (forest) */
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Form container */
+#city_form {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 10px;
+  width: 100%;
+  padding: 0 15px;
+}
+
+/* Input styling */
+#city_input {
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #6b8e23; /* Olive green */
+  background-color: #f0f8ff; /* Light sky blue */
+  color: #2f4f4f; /* Dark green */
+}
+
+/* Button styling */
+#submit_button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #556b2f; /* Dark olive green */
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+#submit_button:hover {
+  background-color: #6b8e23; /* Lighter olive green */
+}
+
+/* Output box */
+#output {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  width: 100%;
+  border-left: 5px solid #6b8e23; /* Adds an accent */
+}
+
+/* Temperature text */
+.city_temps {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2f4f4f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #city_form {
+    flex-direction: column;
+  }
+
+  #city_input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #submit_button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Settings */
+:root {
+  --primary-blue: #007BFF; /* Primary Blue */
+  --light-background: #F8F9FA; /* Light Background */
+  --highlight-yellow: #FFC107; /* Accent Yellow */
+  --dark-text: #333; /* Dark Text for readability */
+  --border-radius: 10px;
+}
+
+
+
+/* Spotlight Section Wrapper */
+#spotlighted_plants_and_animals_section {
+  background-image: url(images/animal_and_plant_info_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Individual Section (Animal and Plant) */
+#animal_spotlight, #plant_spotlight {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  margin: 30px auto;
+  max-width: 1200px;
+  width: 95%;
+}
+
+/* Spotlight Title */
+.highlight-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--highlight-yellow);
+  margin-bottom: 20px;
+}
+
+/* Information Container */
+.info-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  color: var(--dark-text);
+  max-width: 600px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: var(--border-radius);
+  text-align: justify;
+}
+
+/* Image Container */
+.image-container {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+#spotlighted_animal_image, #spotlighted_plant_image {
+  width: 100%;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  display: none;
+}
+
+.spinner-border {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+/* Extra Info */
+.extra-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--dark-text);
+}
+
+/* Listed Info */
+.listed-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.listed_info {
+  font-weight: bold;
+  color: var(--primary-blue);
+}
+
+/* Spinner visibility */
+.spinner-border {
+  display: none;
+}
+
+#spotlighted_animal_image.loaded, #spotlighted_plant_image.loaded {
+  display: block;
+}
+
+.spinner-border.visible {
+  display: inline-block;
+}
+
+/* Accessibility: Visually hidden loading spinner */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+
+
+
+
+.bad {
+  color: #ff0000;
+}
+
+.good {
+  color: #00ff00;
+}
+
+.vgood {
+  color: var(--primary);
+}
+
+
+
+/* Section Styling */
+#about-products-section {
+  background: linear-gradient(175deg, #a2d5f2 , #87ceeb 10%, #e0ffff , var(--dark-green) 60%);
+  padding: 60px 20px 0 20px;
+  color: #003366;
+  text-align: center;
+}
+
+.info-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #003d66;
+}
+
+/* Grid Layout */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.info-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: #4d4d4d;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+footer {
+  background-color: #333; /* Dark background */
+  color: #f1f1f1; /* Light text for contrast */
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 4px solid var(--primary-blue); /* Subtle border at the top */
+}
+
+footer p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+footer a {
+  color: var(--primary-blue); /* Primary Blue for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #FFD700; /* Golden color on hover */
+  text-decoration: underline; /* Underline links when hovered */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Intro Section Styles */
+#intro-section {
+  background: transparent;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#intro-section h1{
+  color: #ffffff;
+}
+.intro-content {
+  max-width: 600px;
+}
+
+.intro-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#shop-now-button {
+  background-color: white;
+  color: #007bff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#shop-now-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#shop-now {
+  padding: 15px 30px;
+  background-color: var(--dark-green);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+#shop-now:hover {
+  background-color: #45a049;
+}
+
+#products {
+  background-color: var(--dark-green);
+  padding: 40px 20px;
+  text-align: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 4vh 5%;
+  position: relative;
+}
+
+#fullscreen_products_container {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  z-index: 20;
+  display: none; 
+  align-items: center; 
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+}
+#fullscreen_products {
+  width: 50vw;
+  aspect-ratio: 1 / 0.8;
+  background-color: #2E8B57 ;
+  z-index: 20;
+  padding: 15px;
+  text-align: left;
+  border: 5px solid #8B4513 ;
+  border-radius: 30px;
+  color: #FFFFFF ;
+}
+#full_screen_product_title {
+  color: #FFFFFF ;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+#full_screen_product_image {
+  width: 40%;
+  float: right;
+  margin: 15px;
+  border: 5px solid #556B2F ;
+  border-radius: 10px;
+}
+
+#full_screen_product_add_to_cart {
+  color: #ffffff;
+  transition: 0.3s;
+
+}
+
+
+#full_screen_product_exit {
+  width: auto;
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 46px;
+}
+
+#full_screen_product_exit:hover {
+  color: rgb(155, 155, 155);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card_container {
+  max-width: 200px;
+  margin: auto;
+}
+
+.hiking_card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--background-color);
+  max-width: 330px;
+  min-width: 250px;
+  margin: 0px auto;
+  transition: 0.3s;
+}
+
+.hiking_card:hover {
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.card_image {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  max-height: 180px;
+  object-fit: fill;
+  width: 100%;
+}
+
+.card_body {
+  padding: 15px;
+}
+
+.card_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.card_description {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.card_price {
+  font-size: 1rem;
+  color: #28a745;
+}
+
+.card_button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.card_button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsiveness (Media Queries) */
+
+
+
+@media (max-width: 1200px){
+  #products {
+    grid-template-columns: repeat(3 , 1fr);
+  }
+}
+
+
+@media (max-width: 900px){
+  
+  #products {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  
+  #products {
+    grid-template-columns: repeat(1 , 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  /* For tablets */
+  #hero_overlay h1 {
+    font-size: 84px;
+  }
+  #main_icon {
+    font-size: 30px;
+  }
+  #pollution_heading {
+    font-size: 3rem;
+  }
+
+  #pollution_description {
+    font-size: 1.2rem;
+    padding: 0 4%;
+  }
+
+  #pollution_stats li {
+    font-size: 1.2rem;
+    padding: 15px;
+    max-width: 45%;
+  }
+
+  #learn_more_button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+ 
+  .nav-link {
+    font-size: 22px;
+  }
+
+  #hero_overlay h1 {
+    font-size: 84px;
+  }
+  #main_icon {
+    font-size: 25px;
+  }
+  #animal_spotlight {
+    padding: 5%;
+  }
+  #spotlighted_animal_name {
+    font-size: 26px;
+  }
+  #plant_spotlight {
+    padding: 5%;
+  }
+  #spotlighted_plant_name {
+    font-size: 26px;
+  }
+  #spotlighted_animal_scientific_name {
+    font-size: 26px;
+  }
+  
+  #spotlighted_plant_scientific_name {
+    font-size: 26px;
+  }
+  #spotlighted_animal_info {
+    flex-direction: column;
+  }
+
+  #spotlighted_animal_image {
+    width: 100%;
+  }
+  #spotlighted_animal_listed_info {
+    grid-template-columns: repeat(1 , 1fr);
+  }
+  #spotlighted_plant_listed_info {
+    grid-template-columns: repeat(1 , 1fr);
+  }
+  #spotlighted_animal_extra_info , #spotlighted_animal_listed_info {
+    font-size: 18px;
+  }
+  #spotlighted_plant_extra_info , #spotlighted_plant_listed_info {
+    font-size: 18px;
+  }
+  
+  #pollution_heading {
+    font-size: 2.5rem;
+  }
+
+  #pollution_description {
+    font-size: 1rem;
+    padding: 0 3%;
+  }
+
+  #pollution_stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #pollution_stats li {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  #learn_more_button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  .intro-content h1 {
+    font-size: 28px;
+  }
+  footer {
+    font-size: 0.9rem;
+}
+
+}
+
+@media (max-width: 480px) {
+  /* For very small mobile devices */
+  
+  #spotlighted_animal_name {
+    font-size: 22px;
+  }
+  #spotlighted_plant_name {
+    font-size: 22px;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+
+  #hero, #hero_overlay {
+    padding: auto 20px;
+  }
+
+  #hero_overlay h1 {
+    font-size: 48px;
+  }
+  
+  #pollution_heading {
+    font-size: 2rem;
+  }
+
+  #pollution_description {
+    font-size: 0.9rem;
+  }
+
+  #pollution_stats li {
+    font-size: 0.9rem;
+  }
+
+  #learn_more_button {
+    font-size: 0.8rem;
+    padding: 8px 20px;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
