@@ -1,0 +1,77 @@
+body {
+    background-color: #D8E2C6 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+
+#full_screen_product_image {
+    width: 60%;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+#full_screen_product_title {
+    width: 100%;
+    margin-top: 3vh;
+    text-align: center;
+    font-size: 38px;
+}
+
+li {
+    color: #000000;
+}
+
+ul {
+    font-size: 22px;
+    margin: 10px 15px;
+}
+
+
+
+
+.card_button {
+    margin-bottom: 3vh;
+}
+
+
+
+/*YOU ARE ABOUT TO ENTER THE "RESPONSIVITY ZONE" */
+@media (max-width: 560px){
+
+    #full_screen_product_image {
+        width: 80%;
+    }
+
+    
+    #full_screen_product_title {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 430px){
+
+    
+    #full_screen_product_title {
+        font-size: 30px;
+    }
+}
+@media (max-width: 350px){
+
+    
+    #full_screen_product_title {
+        font-size: 26px;
+    }
+    
+    ul {
+        font-size: 18px;
+    }
+
+}

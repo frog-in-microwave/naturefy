@@ -307,7 +307,7 @@ input {
 
 
 
-/* Responsiveness - Flexibility until 840px */
+/* You are about to enter to the responsivity zone*/
 @media (max-width: 1024px) {
 #cart_table th, #cart_table td {
   padding: 12px;
@@ -337,7 +337,7 @@ input {
 }
 }
 
-/* Collapsing at 840px and below */
+/* here rthe table turns into the blocky mobile view */
 @media (max-width: 840px) {
 
   #main_icon {
@@ -351,8 +351,8 @@ input {
   #cart_table {
     border-radius: 5px;
     font-size: 14px;
-    width: 100%; /* Ensure table is 100% width on small screens */
-    min-width: 0; /* Prevent the table from having any minimum width */
+    width: 100%; 
+    min-width: 0;
   }
 
   .cart-page h1 {
@@ -374,9 +374,8 @@ input {
     font-size: 14px;
   }
 
-  /* Stack product details vertically on smaller screens */
   #cart_table thead {
-    display: none; /* Hide column names */
+    display: none; 
   }
 
   #cart_table tbody tr {
@@ -392,7 +391,7 @@ input {
     position: relative;
     padding: 10px;
   }
-
+  /* here the content: attr(data-label) makes the table heads turn into the list-name thingys on the left*/
   #cart_table td:before {
     content: attr(data-label);
     font-weight: bold;
@@ -405,7 +404,6 @@ input {
     font-size: 12px;
   }
 
-  /* Adjustments for images and other product info */
   .product-image {
     display: inline-block;
     margin-bottom: 10px;
@@ -422,7 +420,6 @@ input {
   }
 }
 
-/* Small screens (max-width: 480px) */
 @media (max-width: 480px) {
   .nav-link {
     font-size: 22px;
@@ -468,7 +465,6 @@ input {
 }
 }
 
-/* Additional styles for small screens */
 @media (max-width: 480px) {
 .cart-page {
   padding: 20px 10px;

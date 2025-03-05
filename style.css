@@ -14,7 +14,7 @@
   --danger: #DC3545;
   --sky-blue: #87CEEB;
   --dark-green: #236b26;
-}
+}   
 
 /* General Reset */
 * {
@@ -32,6 +32,35 @@ body {
   padding-top: 10vh;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Header */
 header {
@@ -142,7 +171,7 @@ nav {
   color: var(--text-color);
 }
 
-.pollution-card {
+.pollution_card {
   border: none;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -195,7 +224,7 @@ nav {
   color: var(--text-color);  /* Ensuring h5 color is updated */
 }
 
-.pollution-card h5 {
+.pollution_card h5 {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--primary-color);  /* Default color for h5 */
@@ -358,7 +387,7 @@ nav {
 }
 
 /* Spotlight Title */
-.highlight-text {
+.highlight_text {
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--highlight-yellow);
@@ -366,7 +395,7 @@ nav {
 }
 
 /* Information Container */
-.info-container {
+.info_container {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -386,7 +415,7 @@ nav {
 }
 
 /* Image Container */
-.image-container {
+.image_container {
   flex: 1;
   max-width: 400px;
   position: relative;
@@ -402,6 +431,8 @@ nav {
   border-radius: var(--border-radius);
   object-fit: cover;
   display: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .spinner-border {
@@ -411,32 +442,37 @@ nav {
 }
 
 /* Extra Info */
-.extra-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.extra_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   gap: 20px;
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 500;
   color: var(--dark-text);
+  align-items: center;
+  position: relative;
 }
 
 /* Listed Info */
-.listed-info-grid {
+.listed_info_grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  width: 60vw;
   margin-top: 20px;
+  align-items: center;
 }
 
 .listed_info {
   font-weight: bold;
+  width: 100%;
+  flex-grow: 1;
   color: var(--primary-blue);
 }
 
-/* Spinner visibility */
-.spinner-border {
-  display: none;
-}
+
 
 #spotlighted_animal_image.loaded, #spotlighted_plant_image.loaded {
   display: block;
@@ -446,21 +482,9 @@ nav {
   display: inline-block;
 }
 
-/* Accessibility: Visually hidden loading spinner */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-}
 
 
-
-
+/*needed for happy and sad info*/
 
 .bad {
   color: #ff0000;
@@ -476,58 +500,6 @@ nav {
 
 
 
-/* Section Styling */
-#about-products-section {
-  background: linear-gradient(175deg, #a2d5f2 , #87ceeb 10%, #e0ffff , var(--dark-green) 60%);
-  padding: 60px 20px 0 20px;
-  color: #003366;
-  text-align: center;
-}
-
-.info-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.info-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #003d66;
-}
-
-/* Grid Layout */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  text-align: left;
-}
-
-.info-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.info-card h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.info-card p {
-  font-size: 1rem;
-  color: #4d4d4d;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
 
 
 
@@ -537,7 +509,7 @@ nav {
 
 
 
-/* Footer Section */
+/* footer section design*/
 footer {
   background-color: #333; /* Dark background */
   color: #f1f1f1; /* Light text for contrast */
@@ -556,6 +528,7 @@ footer a {
   color: var(--primary-blue); /* Primary Blue for links */
   text-decoration: none;
   font-weight: bold;
+  transition: 0.1s;
 }
 
 footer a:hover {
@@ -574,279 +547,10 @@ footer a:hover {
 
 
 
+/* you are about to enter to the "responsivity zone"*/
+/* take care soldier*/
 
-
-
-/* Intro Section Styles */
-#intro-section {
-  background: transparent;
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#intro-section h1{
-  color: #ffffff;
-}
-.intro-content {
-  max-width: 600px;
-}
-
-.intro-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.intro-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-#shop-now-button {
-  background-color: white;
-  color: #007bff;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-#shop-now-button:hover {
-  background-color: #0056b3;
-  color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-#shop-now {
-  padding: 15px 30px;
-  background-color: var(--dark-green);
-  border: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 25px;
-}
-
-#shop-now:hover {
-  background-color: #45a049;
-}
-
-#products {
-  background-color: var(--dark-green);
-  padding: 40px 20px;
-  text-align: center;
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 4vh 5%;
-  position: relative;
-}
-
-#fullscreen_products_container {
-  background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  bottom: 0%;
-  left: 0%;
-  z-index: 20;
-  display: none; 
-  align-items: center; 
-  justify-content: center;
-  width: 100%;
-  height: 90vh;
-}
-#fullscreen_products {
-  width: 50vw;
-  aspect-ratio: 1 / 0.8;
-  background-color: #2E8B57 ;
-  z-index: 20;
-  padding: 15px;
-  text-align: left;
-  border: 5px solid #8B4513 ;
-  border-radius: 30px;
-  color: #FFFFFF ;
-}
-#full_screen_product_title {
-  color: #FFFFFF ;
-  font-weight: 700;
-  text-decoration: underline;
-  margin-bottom: 5vh;
-  text-align: center;
-}
-#full_screen_product_image {
-  width: 40%;
-  float: right;
-  margin: 15px;
-  border: 5px solid #556B2F ;
-  border-radius: 10px;
-}
-
-#full_screen_product_add_to_cart {
-  color: #ffffff;
-  transition: 0.3s;
-
-}
-
-
-#full_screen_product_exit {
-  width: auto;
-  color: white;
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  font-size: 46px;
-}
-
-#full_screen_product_exit:hover {
-  color: rgb(155, 155, 155);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card_container {
-  max-width: 200px;
-  margin: auto;
-}
-
-.hiking_card {
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  background-color: var(--background-color);
-  max-width: 330px;
-  min-width: 250px;
-  margin: 0px auto;
-  transition: 0.3s;
-}
-
-.hiking_card:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
-  transform: scale(1.05);
-}
-
-.card_image {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  max-height: 180px;
-  object-fit: fill;
-  width: 100%;
-}
-
-.card_body {
-  padding: 15px;
-}
-
-.card_title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #007bff;
-}
-
-.card_description {
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-.card_price {
-  font-size: 1rem;
-  color: #28a745;
-}
-
-.card_button {
-  background-color: #007bff;
-  border: none;
-  border-radius: 12px;
-  padding: 8px 12px;
-  font-size: 0.85rem;
-}
-
-.card_button:hover {
-  background-color: #0056b3;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsiveness (Media Queries) */
-
-
-
-@media (max-width: 1200px){
-  #products {
-    grid-template-columns: repeat(3 , 1fr);
-  }
-}
-
-
-@media (max-width: 900px){
-  
-  #products {
-    grid-template-columns: repeat(2 , 1fr);
-  }
-}
-
-@media (max-width: 600px){
-  
-  #products {
-    grid-template-columns: repeat(1 , 1fr);
-  }
-}
 @media (max-width: 1024px) {
-  /* For tablets */
   #hero_overlay h1 {
     font-size: 84px;
   }
@@ -908,6 +612,7 @@ footer a:hover {
   }
   #spotlighted_animal_info {
     flex-direction: column;
+    align-items: center;
   }
 
   #spotlighted_animal_image {
@@ -915,11 +620,12 @@ footer a:hover {
   }
   #spotlighted_animal_listed_info {
     grid-template-columns: repeat(1 , 1fr);
+    width: 100%;
   }
   #spotlighted_plant_listed_info {
     grid-template-columns: repeat(1 , 1fr);
   }
-  #spotlighted_animal_extra_info , #spotlighted_animal_listed_info {
+  #a_info , #spotlighted_animal_listed_info {
     font-size: 18px;
   }
   #spotlighted_plant_extra_info , #spotlighted_plant_listed_info {

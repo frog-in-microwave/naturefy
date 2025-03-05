@@ -1,3 +1,6 @@
+
+
+// unwanted taxon ids (snails spiders ...)
 const excludedTaxa = [47158, 47119, 48460, 372739, 116551, 48731, 55524];
 
 
@@ -8,6 +11,11 @@ const excludedTaxa = [47158, 47119, 48460, 372739, 116551, 48731, 55524];
 
 
 
+//simple loader  but in awaits the fetchingof both the plants and animals.
+window.onload = async function(){
+  await start();
+  document.getElementById("preloader").style.display = "none";
+};
 
 
 
@@ -17,9 +25,6 @@ const excludedTaxa = [47158, 47119, 48460, 372739, 116551, 48731, 55524];
 
 
 
-
-
-start();
 
 
 
@@ -29,6 +34,10 @@ start();
 
 start_plant_spotlight();
 
+/**
+ * The function `start_plant_spotlight` fetches a list of plants, selects a random plant from the list,
+ * and displays information about the selected plant.
+ */
 async function start_plant_spotlight() {
   let plant_array = await fetch_plants();
   if (plant_array.length === 0) {
@@ -39,6 +48,10 @@ async function start_plant_spotlight() {
     await display_spotlighted_plant(spotlighted_plant);
   }
 }
+
+
+
+// filling up the plant containers
 
 async function display_spotlighted_plant(plant) {
   if (plant.preferred_common_name != null) {
@@ -53,18 +66,26 @@ async function display_spotlighted_plant(plant) {
   document.getElementById("spotlighted_plant_times_noticed").innerHTML = `${plant.observations_count}`;
 
   document.getElementById("spotlighted_plant_image").src = plant.default_photo.medium_url.replace("medium", "large");
-  document.getElementById("spotlighted_plant_description").innerHTML = await get_random_plant_description(plant);
+  document.getElementById("spotlighted_plant_description").innerHTML = get_random_plant_description(plant);
 }
+
+
+// deletes the bootstrap spinner that is a sibling element of the image that is right before it
 
 function stop_spinner(element) {
   element.previousElementSibling.style.display = "none";
   element.style.display = "block";
 }
 
+
+// choosing a random plant
+
 function get_random_plant(plant_array) {
   let index = Math.floor(Math.random() * plant_array.length);
   return plant_array[index];
 }
+
+//getting a random plant discription
 
 function get_random_plant_description(plant) {
   const plant_descriptions = [
@@ -76,6 +97,8 @@ function get_random_plant_description(plant) {
   return plant_descriptions[Math.floor(Math.random() * plant_descriptions.length)];
 }
 
+
+//fetching a random plant page and filtering the plants
 async function fetch_plants() {
   const response = await fetch(`https://api.inaturalist.org/v1/taxa?&page=${Math.floor(Math.random() * 330)}`);
   const data = await response.json();
@@ -85,6 +108,9 @@ async function fetch_plants() {
   return plant_array;
 }
 
+
+
+// checking for the plants and returning while also re fetching if non were found
 function filter_for_plants(plant_list) {
   let plant_array = [];
   let found_plant = false;
@@ -109,7 +135,7 @@ function filter_for_plants(plant_list) {
 
 
 
-
+// this is where the magic happens
 async function start() {
     let animal_array = await fetch_animals();
     if(animal_array.length == 0) {
@@ -124,7 +150,7 @@ async function start() {
     }
 
 
-
+// filling animakl container
 async function display_spotlighted_animal(animal) {
     if(animal.preferred_common_name != null) {
         document.getElementById("spotlighted_animal_name").innerHTML = `The ${animal.preferred_common_name} (${animal.name})`;
@@ -148,11 +174,6 @@ async function display_spotlighted_animal(animal) {
     document.getElementById("spotlighted_animal_discription").innerHTML = await get_random_discription(animal);
 }
 
-
-function stop_spinner(element){
-    element.previousElementSibling.style.display = "none";
-    element.style.display = "block";
-}
 
 
 
@@ -235,7 +256,7 @@ async function city_temp_rn(city_name) {
 
 
 function aproximate_1900_temp(temp_rn){
-    let temp_then = temp_rn - ((Math.random() * 2) + 1);
+    let temp_then = temp_rn - 2;
     return temp_then.toFixed(2);
 }
 
@@ -244,21 +265,29 @@ async function start_city_temp(){
     let temp_rn = await city_temp_rn(city_name);
     let temp_1900 = aproximate_1900_temp(parseFloat(temp_rn));
     
+    document.getElementById("city_name").innerHTML = `
+        Temp in ${city_name} :
+    `;
     document.getElementById("current_temp").innerHTML = `
         Temp now = <span class="bad">${temp_rn}&deg;</span>
     `;
     document.getElementById("before_pollution_temp").innerHTML = `
         Temp in 1900 (before pollution)  &cong; <span class="vgood">${temp_1900}&deg;</span>
     `;
-    console.log(temp_rn);
-    console.log(temp_1900);
 }
 
 function sanitize(string){
     return string.replace(/[""<>'\[\]]/g , " ");
 } 
 
+document.getElementById("city_input").addEventListener("keypress" , (event) => {
+  if(event.key == "Enter"){
+    start_city_temp()
+  }
+})
 
+
+document.getElementById("city_input").addEventListener("blur" , () => {start_city_temp()})
 
 
 

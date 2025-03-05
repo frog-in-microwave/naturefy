@@ -8,8 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="cart_style.css">
+    <link rel="stylesheet" href="loader.css">
   </head>
 <body>
+
+
+
+<!-- The `<div id="preloader">` section with a child `<div class="loader"></div>` is typically used to
+display a loading animation or spinner on a webpage. This preloader element is commonly used to
+indicate to users that the page content is being loaded or processed in the background. -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+
+
+  <!-- bootstrap nav-->
+  
     <header id="home_header">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
@@ -49,6 +64,8 @@
 
     <div class="cart-page">
         <h1>Your Cart</h1>
+        <!-- The `<table>` element with the id "cart_table" is creating a table structure for displaying
+        the names of the columns in the shopping cart. -->
         <table id="cart_table">
           <thead>
             <tr>
@@ -60,11 +77,20 @@
               <th>Action</th>
             </tr>
           </thead>
+          <!-- The `<tbody id="item_adittion_zone"></tbody>` element is used to define the body of the
+          table in the cart page where dynamically added items will be displayed. This element
+          serves as a container for the rows of the table that will be populated with the product
+          information added to the cart. JavaScript code is used to dynamically insert
+          rows into this tbody element based on the items_in_cart list in local storage. -->
           <tbody id="item_adittion_zone">
           </tbody>
         </table>
         
-        <div class="cart_summary">
+        <!-- The `<section class="cart_summary">` section in the HTML code you provided is responsible for
+        displaying the cart summary and providing a form for users to input their contact
+        information before proceeding to checkout. Here is a breakdown of what each element within
+        this `<div>` is doing: -->
+        <section class="cart_summary">
           <h3>Cart Summary</h3>
           <p><strong>Total: </strong> <span id="total_money"></span></p>
           <a href="shop.html#intro-section"><button class="continue-shopping">Continue Shopping</button></a>
@@ -95,7 +121,7 @@
             <button type="submit" class="checkout-btn">Submit</button>
         </form>
         </div>
-      </div>
+      </section>
 
 
 

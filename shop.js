@@ -1,4 +1,8 @@
 
+
+
+
+// this contains each product and it can be extended!!!
 const products_list = [
   {
     "id": 0,
@@ -293,6 +297,10 @@ const products_list = [
   
 
 
+// simple loader
+window.onload = function(){
+  document.getElementById("preloader").style.display = "none";
+};
 
 
 
@@ -300,15 +308,27 @@ const products_list = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// getting or creating the items in cart section and setting it in local storage
 let items_in_cart = JSON.parse(localStorage.getItem("items_in_cart")) || [];
 
 localStorage.setItem("items_in_cart" , JSON.stringify(items_in_cart));
-// localStorage.clear();
 
 
 generate_shopping_cards(products_list);
 
-
+// clicking on the X in the popup
 document.getElementById("full_screen_product_exit").addEventListener("click" , () => {
   document.getElementById("fullscreen_products_container").style.display = "none";
 })
@@ -320,7 +340,7 @@ document.getElementById("full_screen_product_exit").addEventListener("click" , (
 
 
 
-
+// generating a cards based on the info in the products list
 function generate_shopping_cards(products_list){
     for(let i = 0; i < products_list.length; i++){
       let product = products_list[i];
@@ -330,39 +350,56 @@ function generate_shopping_cards(products_list){
           <div class="card_body card-body">
               <h5 class="card_title card-title">${product.name}</h5>
               <p class="card_description card-text">${product.description}</p>
-              <p class="card_price text-success fw-bold">${product.price}</p>
+              <p class="card_price">$${product.price}</p>
               <a class="card_button btn btn-primary btn-sm" onclick="add_to_cart(${product.id})">Add to Cart</a>
           </div>
-      </div>
+        </div>
       `;
 
     }
   }
-  
 
+
+
+
+
+
+
+  
+ //popupif on a wide screen and go to another page if not
 function display_product_discription(event , id) {
   if(!event.target.classList.contains("btn")){
-    product = products_list[id];
-    document.getElementById("fullscreen_products_container").style.display = "flex";
-    document.getElementById("full_screen_product_title").innerHTML = product.name;
-    document.getElementById("full_screen_product_image").src = product.picture_url;
-    document.getElementById("full_screen_product_discription").innerHTML = `Discription : ${product.description}`;
-    document.getElementById("full_screen_product_discription_material").innerHTML = `Material : ${product.material}`;
-    document.getElementById("full_screen_product_discription_manufacturer").innerHTML = `Manufacturer : ${product.manufacturer}`;
-    document.getElementById("full_screen_product_discription_warranty").innerHTML = `Warenty : ${product.warranty}`;
-    document.getElementById("full_screen_product_discription_return_policy").innerHTML = `Return Polacy :${product.return_policy}`;
-    
-    if(product.in_stock){
-      document.getElementById("full_screen_product_discription_in_stock").innerHTML = `In Stock`;
-      document.getElementById("full_screen_product_discription_in_stock").classList += "good";
+    if(document.getElementById("products").offsetWidth < 830){
+      let product = products_list[id];
+      localStorage.setItem("full_screen_product" , JSON.stringify(product));
+      window.location.href = "full_screen_product.html";
     }
     else{
-      document.getElementById("full_screen_product_discription_in_stock").innerHTML = `Out ofStock`;
-      document.getElementById("full_screen_product_discription_in_stock").classList += "bad";
+      let product = products_list[id];
+      document.getElementById("fullscreen_products_container").style.display = "flex";
+      document.getElementById("full_screen_product_title").innerHTML = product.name;
+      document.getElementById("full_screen_product_image").src = product.picture_url;
+      document.getElementById("full_screen_product_discription").innerHTML = `<span class="popup_lable">Discription : </span>${product.description}`;
+      document.getElementById("full_screen_product_discription_price").innerHTML = `<span class="popup_lable">Price : </span><span class="popup_price">$${product.price}</span>`;
+      document.getElementById("full_screen_product_discription_material").innerHTML = `<span class="popup_lable">Material : </span>${product.material}`;
+      document.getElementById("full_screen_product_discription_manufacturer").innerHTML = `<span class="popup_lable">Manufacturer : </span>${product.manufacturer}`;
+      document.getElementById("full_screen_product_discription_warranty").innerHTML = `<span class="popup_lable">Warenty : </span>${product.warranty}`;
+      document.getElementById("full_screen_product_discription_return_policy").innerHTML = `<span class="popup_lable">Return Polacy : </span>${product.return_policy}`;
+      
+      if(product.in_stock){
+        document.getElementById("full_screen_product_discription_in_stock").innerHTML = `In Stock`;
+        document.getElementById("full_screen_product_discription_in_stock").classList += "good";
+      }
+      else{
+        document.getElementById("full_screen_product_discription_in_stock").innerHTML = `Out ofStock`;
+        document.getElementById("full_screen_product_discription_in_stock").classList += "bad";
+      }
+
+
+      document.getElementById("full_screen_product_add_to_cart").addEventListener("click" , () => {
+        add_to_cart(product.id);
+      })
     }
-
-
-    document.getElementById("full_screen_product_add_to_cart").addEventListener("click" , add_to_cart(product.id));
   }
 }
 
@@ -370,8 +407,9 @@ function display_product_discription(event , id) {
 
 
 
-
+// adds the product to the items_in_cart list and updates local storage
 function add_to_cart(id) {
+  console.log("frogs");
     let product = products_list[id];
     let is_added = false;
     for(let i = 0; i < items_in_cart.length; i++){
@@ -397,7 +435,7 @@ function add_to_cart(id) {
 
 
 
-
+// just sets the items_in_car list in the local storage again
 function update_local_storage(){
     localStorage.setItem("items_in_cart" , JSON.stringify(items_in_cart));
 }
