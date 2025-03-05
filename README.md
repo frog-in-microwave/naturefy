@@ -8,7 +8,7 @@
 2. #f4f0e1 for most backgrounds.
 3. #4C6B3C for some image borders.
 4. #333333 for the footer.
-note: there are more miscellaneous colors but not as comonly used as these.
+note: there are more miscellaneous colors but not as comonly used as these. Most of the color combinations pass AAA test.
 
 # Inovations Made:
 1. having a fully functioning shop page and the possibility of removing and adding products via js.
@@ -16,3 +16,8 @@ note: there are more miscellaneous colors but not as comonly used as these.
 3. fetching numerous data from multiple apis for the animal and plant spotlight (iNuetralist api) and the city temps (openWeather api).
 4. havingvery well working responsivity that allows for accessability across all screens in a good way.
 5. having alot of user-friendly interactions in this website.
+
+# Ais Used:
+1. chatgpt for colors, some styling and ALOT OF EXPLANATION OF CONCEPS AND THINGS
+2. Mintlify for some of the documentation
+3. Deep Ai for image creation
