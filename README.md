@@ -1,5 +1,5 @@
 # Naturefy
-  A website for the environmental movement Naturefy
+  A website for the environmental movement Naturefy that showcases some nature and pollution facts, Naturefy's work and hosts a fully functioning shop and cart page.
 
 
 # Main Color Pallette Used:
