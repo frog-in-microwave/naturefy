@@ -1,4 +1,4 @@
-/* Root CSS Variables */
+/* variables of colors that are frequently used */
 :root {
   --primary-color: #4caf50;
   --secondary-color: #8bc34a;
@@ -16,7 +16,6 @@
   --dark-green: #236b26;
 }
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +31,7 @@ body {
   padding-top: 10vh;
 }
 
-/* Header */
+/* Header*/
 header {
   display: flex;
   justify-content: space-between;
@@ -74,7 +73,7 @@ nav {
   color: var(--tertiary-color);
 }
 
-/* Hero Section */
+/* hero section */
 #hero {
   width: 100%;
   position: relative;
@@ -119,7 +118,7 @@ nav {
   margin: 0 auto;
 }
 
-/* Section Styling */
+/*info grid that has the cards containing info about the products */
 #about_products_section {
   padding: 60px 20px 0 20px;
   color: #2c2c2c;
@@ -138,7 +137,6 @@ nav {
   color: #2C6B47;
 }
 
-/* Grid Layout */
 .info_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -183,7 +181,7 @@ nav {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Intro Section Styles */
+/*products intro styling*/
 #intro_section {
   background: transparent;
   color: #2c2c2c;
@@ -210,6 +208,8 @@ nav {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+
+
 
 #shop_now_button {
   background-color: #ffffff;
@@ -240,6 +240,14 @@ nav {
   background-color: #45a049;
 }
 
+
+
+
+
+
+
+
+/* the grid containing the products*/
 #products {
   padding: 40px 20px;
   text-align: center;
@@ -249,6 +257,10 @@ nav {
   gap: 4vh 5%;
   position: relative;
 }
+
+
+/* desining the popup upon clicking on a product card */ 
+
 
 #fullscreen_products_container {
   background-color: rgba(0, 0, 0, 0.7);
@@ -323,10 +335,21 @@ nav {
   color: rgb(155, 155, 155);
 }
 
+
 .card_container {
   max-width: 200px;
   margin: auto;
 }
+
+
+
+
+/* styling of the individual product card and changing some bootstrap card properties too*/
+
+
+
+
+
 
 .hiking_card {
   border-radius: 12px;
@@ -342,6 +365,7 @@ nav {
 .hiking_card:hover {
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .card_image {
@@ -386,7 +410,7 @@ nav {
   background-color: #194027 ;
 }
 
-/* Footer Section */
+/* footer design */
 footer {
   background-color: #333; /* Dark background */
   color: #f1f1f1; /* Light text for contrast */
@@ -413,7 +437,7 @@ footer a:hover {
   text-decoration: underline; /* Underline links when hovered */
 }
 
-/* Responsiveness (Media Queries) */
+/* you are about to enter to the "responsivity zone"*/
 
 @media (max-width: 1200px) {
   #products {
