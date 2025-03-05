@@ -178,12 +178,14 @@ async function display_spotlighted_animal(animal) {
 
 
 
-
+// getting a randomized animal
 function randomed_animal(animal_array) {
     index = Math.floor(Math.random() * animal_array.length);
     return animal_array[index];
 }
 
+
+//getting a randomized animal discription
 function get_random_discription(animal){
     let wiki_page = animal.wikipedia_url || `https://en.wikipedia.org/wiki/${animal.name}`;
     let actual_name = animal.preferred_common_name || animal.name;
@@ -218,7 +220,7 @@ function get_random_discription(animal){
 
 
 
-
+// fetching the animals in a way that is simmilar to the plant way
 async function fetch_animals() {
     const response = await fetch(`https://api.inaturalist.org/v1/taxa?&page=${Math.floor(Math.random() * 330)}`);
     const data = await response.json();
@@ -247,19 +249,20 @@ function filter_for_animals(flist) {
 
 
 
-
+// fetching the weather about the city inputed
 async function city_temp_rn(city_name) {
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city_name}?unitGroup=metric&key=AXM99KSNCWA792K2UYH5RBPE8&contentType=json`);
     const data = await response.json();
     return data.currentConditions.temp;
 }
 
-
+// the temp before polution was aproximatly 1.5 degrees lower in all the world so:
 function aproximate_1900_temp(temp_rn){
-    let temp_then = temp_rn - 2;
+    let temp_then = temp_rn - 1.5;
     return temp_then.toFixed(2);
 }
 
+//where the magic happens
 async function start_city_temp(){
     let city_name = sanitize(document.getElementById("city_input").value)
     let temp_rn = await city_temp_rn(city_name);
@@ -276,9 +279,14 @@ async function start_city_temp(){
     `;
 }
 
+
+// no javascript injections in my website!!!
 function sanitize(string){
     return string.replace(/[""<>'\[\]]/g , " ");
 } 
+
+
+//trigering the magic by pressing enter or by going out of focus
 
 document.getElementById("city_input").addEventListener("keypress" , (event) => {
   if(event.key == "Enter"){

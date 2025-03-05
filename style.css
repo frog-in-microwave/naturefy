@@ -1,4 +1,4 @@
-/* Root CSS Variables */
+/*variables for colors used alot */
 :root {
   --primary-color: #4CAF50;
   --secondary-color: #8BC34A;
@@ -14,9 +14,13 @@
   --danger: #DC3545;
   --sky-blue: #87CEEB;
   --dark-green: #236b26;
+  --primary-blue: #007BFF; 
+  --light-background: #F8F9FA; 
+  --highlight-yellow: #FFC107; 
+  --dark-text: #333; 
+  --border-radius: 10px;
 }   
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +66,7 @@ body {
 
 
 
-/* Header */
+/*header */
 header {
   display: flex;
   justify-content: space-between;
@@ -105,7 +109,7 @@ nav {
   color: var(--tertiary-color);
 }
   
-  /* Hero Section */
+  /* hero section */
 #hero {
   width: 100%;
   position: relative;
@@ -163,7 +167,7 @@ nav {
 
 
 
-
+/*poliotion cards section*/
 #pollution_awareness_section {
   background: linear-gradient(to bottom, var(--sky-blue) 10%, var(--dark-green) 90%); /* Brown on top, white at the bottom */
   padding: 50px 20px;
@@ -182,7 +186,7 @@ nav {
   transition: 0.5s;
 }
 
-
+/*icon colors*/
 .fa-smog {
   color: var(--danger);
 }
@@ -193,6 +197,8 @@ nav {
   color: var(--success);
 }
 
+
+/* changin the color of each card on hover*/
 #air_pollution:hover {
   background-color: var(--danger);
   color: var(--text-color);
@@ -245,7 +251,7 @@ nav {
 }
 
 
-/* General styling for full-width container */
+/* styling for the weather before and after polution section*/
 #weather_container {
   width: 100%;
   padding: 25px;
@@ -254,7 +260,6 @@ nav {
   text-align: center;
 }
 
-/* Title styling */
 #title {
   text-align: center;
   margin-bottom: 20px;
@@ -263,7 +268,6 @@ nav {
   font-weight: bold;
 }
 
-/* Form container */
 #city_form {
   max-width: 800px;
   display: flex;
@@ -276,7 +280,6 @@ nav {
   padding: 0 15px;
 }
 
-/* Input styling */
 #city_input {
   flex-grow: 1;
   padding: 12px;
@@ -286,7 +289,6 @@ nav {
   color: #2f4f4f; /* Dark green */
 }
 
-/* Button styling */
 #submit_button {
   padding: 12px 18px;
   border-radius: 8px;
@@ -300,8 +302,7 @@ nav {
 #submit_button:hover {
   background-color: #6b8e23; /* Lighter olive green */
 }
-
-/* Output box */
+/*wheere the data is added via js */
 #output {
   background: #ffffff;
   padding: 15px;
@@ -313,28 +314,13 @@ nav {
   border-left: 5px solid #6b8e23; /* Adds an accent */
 }
 
-/* Temperature text */
+/* TempC text */
 .city_temps {
   font-size: 1.3rem;
   font-weight: bold;
   color: #2f4f4f;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  #city_form {
-    flex-direction: column;
-  }
-
-  #city_input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #submit_button {
-    width: 100%;
-  }
-}
 
 
 
@@ -353,18 +339,11 @@ nav {
 
 
 
-/* Global Settings */
-:root {
-  --primary-blue: #007BFF; /* Primary Blue */
-  --light-background: #F8F9FA; /* Light Background */
-  --highlight-yellow: #FFC107; /* Accent Yellow */
-  --dark-text: #333; /* Dark Text for readability */
-  --border-radius: 10px;
-}
 
 
 
-/* Spotlight Section Wrapper */
+
+/*spotlight section container */
 #spotlighted_plants_and_animals_section {
   background-image: url(images/animal_and_plant_info_background.jpg);
   background-size: cover;
@@ -374,7 +353,7 @@ nav {
   text-align: center;
 }
 
-/* Individual Section (Animal and Plant) */
+/* the main sections (animal spotlight and plant spotlight)*/
 #animal_spotlight, #plant_spotlight {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
@@ -386,7 +365,7 @@ nav {
   width: 95%;
 }
 
-/* Spotlight Title */
+/* spotlight title*/
 .highlight_text {
   font-size: 2.5rem;
   font-weight: bold;
@@ -394,7 +373,7 @@ nav {
   margin-bottom: 20px;
 }
 
-/* Information Container */
+/* information container*/
 .info_container {
   display: flex;
   justify-content: center;
@@ -403,7 +382,7 @@ nav {
   margin-bottom: 40px;
 }
 
-/* Description Text */
+/* description text */
 .description {
   font-size: 1.1rem;
   color: var(--dark-text);
@@ -414,7 +393,6 @@ nav {
   text-align: justify;
 }
 
-/* Image Container */
 .image_container {
   flex: 1;
   max-width: 400px;
@@ -440,8 +418,7 @@ nav {
   width: 50px;
   height: 50px;
 }
-
-/* Extra Info */
+/*info in the bottom*/
 .extra_info {
   display: flex;
   flex-direction: row;
@@ -455,7 +432,6 @@ nav {
   position: relative;
 }
 
-/* Listed Info */
 .listed_info_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -578,7 +554,6 @@ footer a:hover {
   }
 
 }
-
 @media (max-width: 768px) {
  
   .nav-link {
@@ -657,6 +632,19 @@ footer a:hover {
   }
   .intro-content h1 {
     font-size: 28px;
+  }
+
+  #city_form {
+    flex-direction: column;
+  }
+
+  #city_input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #submit_button {
+    width: 100%;
   }
   footer {
     font-size: 0.9rem;

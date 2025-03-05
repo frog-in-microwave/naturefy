@@ -412,12 +412,12 @@ nav {
 
 /* footer design */
 footer {
-  background-color: #333; /* Dark background */
-  color: #f1f1f1; /* Light text for contrast */
+  background-color: #333333; 
+  color: #f1f1f1; 
   padding: 40px 20px;
   text-align: center;
   font-size: 1rem;
-  border-top: 4px solid var(--primary-blue); /* Subtle border at the top */
+  border-top: 4px solid #007BFF; 
 }
 
 footer p {
@@ -426,15 +426,15 @@ footer p {
 }
 
 footer p a {
-    color: #0D6EFD; /* Primary Blue for links */
+    color: #0D6EFD; 
     text-decoration: none;
     font-weight: bold;
     transition: 0.1s;
 }
 
 footer a:hover {
-  color: #ffd700; /* Golden color on hover */
-  text-decoration: underline; /* Underline links when hovered */
+  color: #ffd700; 
+  text-decoration: underline;
 }
 
 /* you are about to enter to the "responsivity zone"*/
