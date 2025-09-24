@@ -275,6 +275,12 @@ body {
     #achivements_image {
         float: none;
     }
+        #naturefy_purpos h1{
+        font-size: 32px;
+    }
+    #charities h1{
+        font-size: 32px;
+    }
 }
 
 @media(max-width: 720px) {
